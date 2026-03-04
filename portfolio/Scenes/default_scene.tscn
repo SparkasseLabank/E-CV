@@ -198,6 +198,8 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1121440980]
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1403969335]
 position = Vector2(572.00006, 278.00003)
