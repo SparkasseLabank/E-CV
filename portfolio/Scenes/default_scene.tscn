@@ -297,6 +297,14 @@ position = Vector2(-1, -1)
 visible = false
 position = Vector2(0, 8)
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1099141412]
+offset_left = 1138.6666
+offset_top = -130.66667
+offset_right = 1178.6666
+offset_bottom = -90.66667
+scale = Vector2(4.9383216, 20.501623)
+color = Color(0, 0, 0, 1)
+
 [connection signal="body_entered" from="detection areas/Github_area" to="CharacterBody2D" method="_on_github_area_body_entered"]
 [connection signal="body_exited" from="detection areas/Github_area" to="CharacterBody2D" method="_on_github_area_body_exited"]
 [connection signal="body_entered" from="detection areas/linkedIn_area" to="CharacterBody2D" method="_on_linked_in_area_body_entered"]
