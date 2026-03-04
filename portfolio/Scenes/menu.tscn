@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://b3dwf1ew3xlwj"]
+
+[ext_resource type="Texture2D" uid="uid://b3j242m0f0u8k" path="res://Sprites/menus/menu_cutout.png" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://c2pcyamv4rtmx" path="res://Sprites/menus/status_button.png" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://bpq0sbyk1bxxs" path="res://Sprites/menus/status_button_selected.png" id="3_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://dv46ci87oqlah" path="res://Sprites/menus/skills_button.png" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://boni8r17g3eqh" path="res://Sprites/menus/projects_button.png" id="4_158mb"]
+[ext_resource type="Texture2D" uid="uid://bc3y1hk055vby" path="res://Sprites/menus/skills_button_selected.png" id="5_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://n3p4ce5jc5us" path="res://Sprites/menus/projects_button_selected.png" id="7_wbdvm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbdvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_158mb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jsrd8")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3rjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wwsa2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jsrd8")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6swd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_158mb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wbdvm")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[node name="Menu" type="Node2D" unique_id=180766636]
+
+[node name="Visual" type="Node2D" parent="." unique_id=976588759]
+
+[node name="menu" type="Sprite2D" parent="Visual" unique_id=1679139147]
+position = Vector2(575.8888, 323.625)
+scale = Vector2(0.60069436, 0.60069436)
+texture = ExtResource("1_cayip")
+
+[node name="status" type="AnimatedSprite2D" parent="Visual" unique_id=214094539]
+position = Vector2(310.00003, 100)
+scale = Vector2(0.5815047, 0.5815047)
+sprite_frames = SubResource("SpriteFrames_wbdvm")
+
+[node name="skills" type="AnimatedSprite2D" parent="Visual" unique_id=682504544]
+position = Vector2(270, 249.00002)
+scale = Vector2(0.53996867, 0.53996867)
+sprite_frames = SubResource("SpriteFrames_q3rjx")
+
+[node name="projects" type="AnimatedSprite2D" parent="Visual" unique_id=1184567126]
+position = Vector2(252, 397.99997)
+scale = Vector2(0.49608144, 0.49608153)
+sprite_frames = SubResource("SpriteFrames_6swd7")

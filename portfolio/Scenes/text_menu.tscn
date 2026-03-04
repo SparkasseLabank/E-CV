@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://csntdsbmotf55"]
+
+[ext_resource type="Texture2D" uid="uid://cxarxj1tev1f" path="res://Sprites/menus/menu_text.png" id="1_ka5t0"]
+[ext_resource type="Texture2D" uid="uid://bmwg5lmhrri8m" path="res://Sprites/menus/status_text.png" id="2_x6gvg"]
+[ext_resource type="Texture2D" uid="uid://dibdt6iq4qmf5" path="res://Sprites/menus/skills_text.png" id="3_gx331"]
+[ext_resource type="Texture2D" uid="uid://cpkgwt4jr1qgs" path="res://Sprites/menus/projects_text.png" id="4_m5mqd"]
+
+[node name="TextMenu" type="Node2D" unique_id=1564100049]
+
+[node name="text_menu" type="Sprite2D" parent="." unique_id=305595279]
+position = Vector2(577, 323.00003)
+scale = Vector2(0.60787034, 0.60787034)
+texture = ExtResource("1_ka5t0")
+
+[node name="status_text" type="Sprite2D" parent="." unique_id=764715191]
+visible = false
+position = Vector2(577, 323.00003)
+scale = Vector2(0.60787034, 0.60787034)
+texture = ExtResource("2_x6gvg")
+
+[node name="skills_text" type="Sprite2D" parent="." unique_id=1005032143]
+visible = false
+position = Vector2(577, 323.00003)
+scale = Vector2(0.60787034, 0.60787034)
+texture = ExtResource("3_gx331")
+
+[node name="projects_text" type="Sprite2D" parent="." unique_id=704163660]
+visible = false
+position = Vector2(577, 323.00003)
+scale = Vector2(0.60787034, 0.60787034)
+texture = ExtResource("4_m5mqd")

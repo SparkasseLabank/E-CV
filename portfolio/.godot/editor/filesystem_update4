@@ -1,0 +1,6 @@
+res://default_scene.tscn
+res://character_body_2d.gd
+res://Scenes/menu.tscn
+res://Scenes/default_scene.tscn
+res://Scripts/character_body_2d.gd
+res://Scenes/text_menu.tscn
