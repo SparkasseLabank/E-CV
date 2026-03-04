@@ -7,13 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://b3dwf1ew3xlwj" path="res://Scenes/menu.tscn" id="4_4xipt"]
 [ext_resource type="PackedScene" uid="uid://csntdsbmotf55" path="res://Scenes/text_menu.tscn" id="5_65y5c"]
 [ext_resource type="Script" uid="uid://dnjcqwmfs4n7u" path="res://Scenes/github_area.gd" id="6_4xipt"]
+[ext_resource type="Texture2D" uid="uid://dc4o2iyb6mgij" path="res://Sprites/video.webp" id="6_vcpbj"]
 [ext_resource type="Texture2D" uid="uid://c2cadls2a2atc" path="res://Sprites/linkedin.webp" id="8_ctkjm"]
+[ext_resource type="Texture2D" uid="uid://b0es61a852anv" path="res://Sprites/classic_shroom3.png" id="9_s085o"]
+[ext_resource type="Texture2D" uid="uid://dx57o2urer65l" path="res://Sprites/splash.png" id="10_becpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esl1a"]
 size = Vector2(78, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s085o"]
 size = Vector2(83, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p7q4"]
+size = Vector2(125.33336, 82.66667)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_823qk"]
 a = Vector2(-2169, -1373)
@@ -199,12 +205,30 @@ animations = [{
 
 [node name="Node2D" type="Node2D" unique_id=1121440980]
 scale = Vector2(1.5, 1.5)
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1403969335]
 position = Vector2(572.00006, 278.00003)
 scale = Vector2(0.75439453, 0.75439453)
 texture = ExtResource("1_c7adq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1099141412]
+offset_left = 1138.6667
+offset_top = -130.66667
+offset_right = 1178.6667
+offset_bottom = -90.66667
+scale = Vector2(4.9383216, 20.501623)
+color = Color(0, 0, 0, 1)
+
+[node name="Splash" type="Sprite2D" parent="." unique_id=759277766]
+position = Vector2(822.66675, 64)
+rotation = -0.15199783
+scale = Vector2(0.08958335, 0.08958338)
+texture = ExtResource("10_becpc")
+
+[node name="ClassicShroom3" type="Sprite2D" parent="." unique_id=1286501902]
+position = Vector2(437.4167, 43.249992)
+scale = Vector2(0.2783333, 0.2783333)
+texture = ExtResource("9_s085o")
 
 [node name="detection areas" type="Node2D" parent="." unique_id=365908450]
 
@@ -232,6 +256,18 @@ texture = ExtResource("8_ctkjm")
 [node name="detect_area" type="CollisionShape2D" parent="detection areas/linkedIn_area" unique_id=696492206]
 position = Vector2(709.5, 107.75)
 shape = SubResource("RectangleShape2D_s085o")
+
+[node name="video_area" type="Area2D" parent="detection areas" unique_id=320660355]
+
+[node name="Video" type="Sprite2D" parent="detection areas/video_area" unique_id=1996990186]
+modulate = Color(1, 1, 1, 0.49411765)
+position = Vector2(382, 113.33333)
+scale = Vector2(0.17190477, 0.17190477)
+texture = ExtResource("6_vcpbj")
+
+[node name="detect_area" type="CollisionShape2D" parent="detection areas/video_area" unique_id=1048260955]
+position = Vector2(382, 194.00002)
+shape = SubResource("RectangleShape2D_4p7q4")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1645932157]
 
@@ -276,7 +312,7 @@ position = Vector2(896, 506.375)
 shape = SubResource("RectangleShape2D_jxyi8")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1608588516]
-position = Vector2(289, 284)
+position = Vector2(546.6667, 278.66666)
 script = ExtResource("2_65y5c")
 metadata/_edit_group_ = true
 
@@ -297,15 +333,9 @@ position = Vector2(-1, -1)
 visible = false
 position = Vector2(0, 8)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1099141412]
-offset_left = 1138.6666
-offset_top = -130.66667
-offset_right = 1178.6666
-offset_bottom = -90.66667
-scale = Vector2(4.9383216, 20.501623)
-color = Color(0, 0, 0, 1)
-
 [connection signal="body_entered" from="detection areas/Github_area" to="CharacterBody2D" method="_on_github_area_body_entered"]
 [connection signal="body_exited" from="detection areas/Github_area" to="CharacterBody2D" method="_on_github_area_body_exited"]
 [connection signal="body_entered" from="detection areas/linkedIn_area" to="CharacterBody2D" method="_on_linked_in_area_body_entered"]
 [connection signal="body_exited" from="detection areas/linkedIn_area" to="CharacterBody2D" method="_on_linked_in_area_body_exited"]
+[connection signal="body_entered" from="detection areas/video_area" to="CharacterBody2D" method="_on_video_area_body_entered"]
+[connection signal="body_exited" from="detection areas/video_area" to="CharacterBody2D" method="_on_video_area_body_exited"]

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var github_area = $"../detection areas/Github_area/detect_area"
 @onready var github_logo = $"../detection areas/Github_area/Github"
 @onready var linkedin_logo = $"../detection areas/linkedIn_area/Linkedin"
+@onready var video_logo = $"../detection areas/video_area/Video"
 @onready var button_list = [$"../Menu/Visual/status",$"../Menu/Visual/skills",$"../Menu/Visual/projects"]
 @onready var _text_menu_list = [$"../TextMenu/status_text",$"../TextMenu/skills_text",$"../TextMenu/projects_text"]
 @onready var selected_button_index = 0
@@ -120,5 +121,17 @@ func _on_linked_in_area_body_entered(body: Node2D) -> void:
 
 func _on_linked_in_area_body_exited(body: Node2D) -> void:
 	linkedin_logo.modulate.a = 0.5
+	link_openable = false
+	link_to_open = ""
+
+
+func _on_video_area_body_entered(body: Node2D) -> void:
+	video_logo.modulate.a = 1
+	link_to_open = "https://www.linkedin.com/in/scotty-pruvost-80610a353/"
+	link_openable = true
+
+
+func _on_video_area_body_exited(body: Node2D) -> void:
+	video_logo.modulate.a = 0.5
 	link_openable = false
 	link_to_open = ""
