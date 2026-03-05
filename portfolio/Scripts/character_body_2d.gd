@@ -127,7 +127,7 @@ func _on_linked_in_area_body_exited(body: Node2D) -> void:
 
 func _on_video_area_body_entered(body: Node2D) -> void:
 	video_logo.modulate.a = 1
-	link_to_open = "https://www.linkedin.com/in/scotty-pruvost-80610a353/"
+	link_to_open = "https://drive.google.com/file/d/1VPgWgS5COQ_Vb1T0GyzH96HnrvPfutAw/view?usp=sharing"
 	link_openable = true
 
 
