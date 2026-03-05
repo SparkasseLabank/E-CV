@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dnjcqwmfs4n7u" path="res://Scenes/github_area.gd" id="6_4xipt"]
 [ext_resource type="Texture2D" uid="uid://dc4o2iyb6mgij" path="res://Sprites/video.webp" id="6_vcpbj"]
 [ext_resource type="Texture2D" uid="uid://c2cadls2a2atc" path="res://Sprites/linkedin.webp" id="8_ctkjm"]
+[ext_resource type="Texture2D" uid="uid://cjhviqcttpnms" path="res://Sprites/cv.webp" id="8_vcpbj"]
 [ext_resource type="Texture2D" uid="uid://b0es61a852anv" path="res://Sprites/classic_shroom3.png" id="9_s085o"]
 [ext_resource type="Texture2D" uid="uid://dx57o2urer65l" path="res://Sprites/splash.png" id="10_becpc"]
 
@@ -20,6 +21,9 @@ size = Vector2(83, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p7q4"]
 size = Vector2(125.33336, 82.66667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68su5"]
+size = Vector2(70.66666, 77.33333)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_823qk"]
 a = Vector2(-2169, -1373)
@@ -269,6 +273,18 @@ texture = ExtResource("6_vcpbj")
 position = Vector2(382, 194.00002)
 shape = SubResource("RectangleShape2D_4p7q4")
 
+[node name="cv_area" type="Area2D" parent="detection areas" unique_id=1497320729]
+
+[node name="Cv" type="Sprite2D" parent="detection areas/cv_area" unique_id=264906821]
+modulate = Color(1, 1, 1, 0.49019608)
+position = Vector2(242.66667, 100)
+scale = Vector2(0.19333331, 0.19333331)
+texture = ExtResource("8_vcpbj")
+
+[node name="detect_area" type="CollisionShape2D" parent="detection areas/cv_area" unique_id=1771585]
+position = Vector2(245.33334, 170.66667)
+shape = SubResource("RectangleShape2D_68su5")
+
 [node name="Collisions" type="Node2D" parent="." unique_id=1645932157]
 
 [node name="Walls" type="StaticBody2D" parent="Collisions" unique_id=1248468474]
@@ -339,3 +355,5 @@ position = Vector2(0, 8)
 [connection signal="body_exited" from="detection areas/linkedIn_area" to="CharacterBody2D" method="_on_linked_in_area_body_exited"]
 [connection signal="body_entered" from="detection areas/video_area" to="CharacterBody2D" method="_on_video_area_body_entered"]
 [connection signal="body_exited" from="detection areas/video_area" to="CharacterBody2D" method="_on_video_area_body_exited"]
+[connection signal="body_entered" from="detection areas/cv_area" to="CharacterBody2D" method="_on_cv_area_body_entered"]
+[connection signal="body_exited" from="detection areas/cv_area" to="CharacterBody2D" method="_on_cv_area_body_exited"]

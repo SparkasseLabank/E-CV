@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var menu_opened = false
 @onready var link_to_open = ""
 @onready var link_openable = false
+@onready var cv_logo = $"../detection areas/cv_area/Cv"
 @onready var github_area = $"../detection areas/Github_area/detect_area"
 @onready var github_logo = $"../detection areas/Github_area/Github"
 @onready var linkedin_logo = $"../detection areas/linkedIn_area/Linkedin"
@@ -133,5 +134,17 @@ func _on_video_area_body_entered(body: Node2D) -> void:
 
 func _on_video_area_body_exited(body: Node2D) -> void:
 	video_logo.modulate.a = 0.5
+	link_openable = false
+	link_to_open = ""
+
+
+func _on_cv_area_body_entered(body: Node2D) -> void:
+	cv_logo.modulate.a = 1
+	link_to_open = "https://pruvostscotty.wordpress.com/"
+	link_openable = true
+
+
+func _on_cv_area_body_exited(body: Node2D) -> void:
+	cv_logo.modulate.a = 0.5
 	link_openable = false
 	link_to_open = ""
